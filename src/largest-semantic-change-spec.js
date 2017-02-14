@@ -1,9 +1,16 @@
 'use strict'
 
+const la = require('lazy-ass')
+const is = require('check-more-types')
+
 /* global describe, it */
 describe('largest-semantic-change', () => {
-  const largestSemanticChange = require('.')
-  it('write this test', () => {
-    console.assert(largestSemanticChange, 'should export something')
+  const m = require('.')
+  it('has largerChange', () => {
+    la(is.fn(m.largerChange))
+  })
+
+  it('has topChange', () => {
+    la(is.fn(m.topChange))
   })
 })
