@@ -8,15 +8,27 @@
 [![semantic-release][semantic-image] ][semantic-url]
 [![js-standard-style][standard-image]][standard-url]
 
+A couple of utility methods that compare semantic changes. For example
+when comparing `feat` and `chore`, `feat` is larger. Similarly, `major`
+is the largest.
+
+## Use
+
+Install using Node `npm install --save largest-semantic-change`
+
+```js
+const {largerChange, topChange} = require('largest-semantic-change')
+largerChange('feat', 'fix')       //> 'feat'
+topChange(['feat', 'fix', 'fix']) //> 'feat'
+```
+
 ### Small print
 
 Author: Gleb Bahmutov &lt;gleb.bahmutov@gmail.com&gt; &copy; 2017
 
-
 * [@bahmutov](https://twitter.com/bahmutov)
 * [glebbahmutov.com](http://glebbahmutov.com)
 * [blog](http://glebbahmutov.com/blog)
-
 
 License: MIT - do anything with the code, but don't blame me if it does not work.
 
