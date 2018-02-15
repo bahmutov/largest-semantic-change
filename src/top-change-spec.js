@@ -69,4 +69,9 @@ describe('top change', () => {
     const result = top(['feat', 'fix', 'feat', undefined, 'major'])
     la(result === 'major', result)
   })
+
+  it('allows minor, patch aliases', () => {
+    const result = top(['minor', 'fix'])
+    la(result === 'feat', result)
+  })
 })

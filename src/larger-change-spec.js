@@ -30,4 +30,10 @@ describe('comparing two changes', () => {
     const larger = largerChange(null, 'fix')
     la(larger === 'fix', larger)
   })
+
+  it('prefers break over patch', () => {
+    const larger = largerChange('break', 'patch')
+    // but returns "major"
+    la(larger === 'major', larger)
+  })
 })

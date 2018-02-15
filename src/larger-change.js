@@ -1,3 +1,17 @@
+const types = {
+  major: 'major',
+  feat: 'feat',
+  fix: 'fix',
+  break: 'major',
+  minor: 'feat',
+  patch: 'fix',
+  chore: 'chore'
+}
+
+function remap (t) {
+  return types[t]
+}
+
 /*
   given two semantic version changes, like "fix" and "feat",
   returns the larger one. For example:
@@ -8,6 +22,10 @@
     undefined, undefined -> undefined
 */
 function largerChange (a, b) {
+  // consider possible aliases
+  a = remap(a)
+  b = remap(b)
+
   if (!a) {
     return b
   }

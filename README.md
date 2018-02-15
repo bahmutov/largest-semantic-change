@@ -22,6 +22,10 @@ largerChange('feat', 'fix')       //> 'feat'
 topChange(['feat', 'fix', 'fix']) //> 'feat'
 ```
 
+### Input values
+
+You can send aliases; for example `major|break` are same as `major`, `minor|feat` are same as `feat` and `patch|fix` are equivalent. Returned value is always `major|feat|fix|chore`.
+
 ### Small print
 
 Author: Gleb Bahmutov &lt;gleb.bahmutov@gmail.com&gt; &copy; 2017
