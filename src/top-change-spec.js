@@ -59,4 +59,14 @@ describe('top change', () => {
     const result = top(commits)
     la(result === 'major', result)
   })
+
+  it('allows just types', () => {
+    const result = top(['feat', 'fix', 'feat'])
+    la(result === 'feat', result)
+  })
+
+  it('allows just types with undefined values', () => {
+    const result = top(['feat', 'fix', 'feat', undefined, 'major'])
+    la(result === 'major', result)
+  })
 })
